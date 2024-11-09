@@ -56,7 +56,7 @@ Follow these steps to set up TeleGuide on your local machine:
    streamlit run app.py
    ```
 
-8. Open your web browser and go to `http://localhost:8501` to use TeleGuide!
+8. Open your web browser and go to `http://localhost:8501` to use BlightSight!
 
 ## 👥 Team
 
