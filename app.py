@@ -8,9 +8,7 @@ import tempfile
 from audio_recorder_streamlit import audio_recorder
 
 # Initialize the Groq client
-api_key=st.secrets['API_KEY']
-print(api_key)
-client = Groq(api_key=api_key)
+client = Groq(api_key= st.secrets["GROQ_API_KEY"])
 
 def transcribe_audio(audio_file):
     # Transcribe audio using Groq's Whisper model
@@ -75,9 +73,9 @@ def report_mistakes(self, text):
 
         return mistakes
 # App Configuration
-st.set_page_config(page_title="EnglishCoach 2.0", layout="wide")
-st.title("EnglishCoach 2.0: Improve Your Communication Skills")
-st.write("Unlock Your English Potential with Personalized Feedback!")
+st.set_page_config(page_title="SmartScore", layout="wide")
+st.title("SmartScore: Improve Your Grammar and Communication Skills")
+st.write("Get Instant Feedback!")
 
 # Sidebar for Navigation
 st.sidebar.title("Navigation")
@@ -108,7 +106,7 @@ def display_writing_plan(plan_days, topics):
     # Submit button for essay
     if st.button("Submit for Feedback"):
         if len(user_input.strip()) == 0:
-            st.warning("Please enter some text before submitting.")
+            st.warning("Kindly Enter some text before submitting.")
         else:
             input_text = user_input
 
@@ -120,7 +118,7 @@ def display_writing_plan(plan_days, topics):
             # Use the retrieved content as context for the chat completion
             chat_completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "You are an expert academic writer with 40 years of experience in providing conscise but effective feedback. Instead of asking the student to do this and that you just say replace this with this to improve in a concise manner. You provide concise grammer mistake saying replace this with this alongwith mistake type. you also provide specific replacement sentences for cohesion and abstraction and you point out all the vocab saying that replace this word with this. You have to Analyze the writing for grammar, cohesion, sentence structure, vocabulary, and the use of simple, complex, and compound sentences, as well as the effectiveness of abstraction. Provide detailed feedback on any mistakes and present an improved version of writing. don't use words such as Dive, discover, uncover, delve , , tailor, equipped, navigate, landscape,delve, magic, comprehensive embrace, well equipped,unleash, cutting edge harness that are giving AI generated look... strictly follow academic style in writing. You have the change the sentence according to the english standards if needed but add any sentence by yourself just change the input provided to you.If user is of A1 level then retur the output for the begineers A2 for average and A3 for advance and you can go till C1 level"},
+                    {"role": "system", "content": "You are an expert academic writer with 30 years of experience in providing conscise but effective feedback. Instead of asking the student to do this and that you just say replace this with this to improve in a concise manner. You provide concise grammer mistake saying replace this with this alongwith mistake type. you also provide specific replacement sentences for cohesion and abstraction and you point out all the vocab saying that replace this word with this. You have to Analyze the writing for grammar, cohesion, sentence structure, vocabulary, and the use of simple, complex, and compound sentences, as well as the effectiveness of abstraction. Provide detailed feedback on any mistakes and present an improved version of writing. don't use words such as Dive, discover, uncover, delve , , tailor, equipped, navigate, landscape,delve, magic, comprehensive embrace, well equipped,unleash, cutting edge harness that are giving AI generated look... strictly follow academic style in writing. You have the change the sentence according to the english standards if needed but add any sentence by yourself just change the input provided to you.If user is of A1 level then retur the output for the begineers A2 for average and A3 for advance and you can go till C1 level"},
                     {"role": "user", "content": retrieved_content},
                     {"role": "user", "content": input_text},
                 ],
@@ -142,15 +140,13 @@ def display_writing_plan(plan_days, topics):
 
 # Home Navigation
 if page == "Home":
-    st.write("This platform is designed to help you enhance your English communication skills through personalized feedback and structured learning plans. Whether you're preparing for exams like IELTS, PTE, or DET, or simply looking to improve your English fluency, this app provides targeted guidance to boost your confidence in both writing and speaking.")
+    st.write("SmartScore is a sophisticated application designed to elevate your English communication and grammar skills through personalized feedback and structured learning plans. Whether you are preparing for proficiency exams such as IELTS, PTE, or DET, or aiming to enhance your overall fluency, SmartScore offers tailored guidance to improve both your writing and speaking abilities. With a focus on providing actionable insights and targeted strategies, the app empowers users to boost their confidence and achieve their language goals with precision and efficiency.")
 
 # Writing Module
 elif page == "Writing Module":
     st.header("Writing Module")
     st.write(""" 
-    **EnglishCoach 2.0** is designed to assist you in improving your English communication skills.
-    Choose a **Writing Plan** (30, 45, or 60 days) and practice writing on various topics. You’ll get real-time feedback.
-    The key to mastering writing is consistency. Select a plan that fits your goals and start practicing today!
+     SmartScore is expertly crafted to help you enhance your English communication and grammar skills. Select from a range of Writing Plans (30, 45, or 60 days) and engage in writing exercises across a variety of diverse topics. Receive real-time, personalized feedback to guide your progress. Consistency is key to mastering writing, and with SmartScore, you can choose a plan tailored to your needs and pace, ensuring steady improvement in both proficiency and confidence.
     """)
     
     # Key Feature Rectangles
@@ -158,185 +154,175 @@ elif page == "Writing Module":
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.write("### 30-Day Plan")
+        st.write("### 15-Day Plan")
         st.write("Focused on basics: introduction, conclusion, argumentative, descriptive writing.")
       
             
     with col2:
-        st.write("### 45-Day Plan")
-        st.write("Expanded topics: deep-dive into opinion-based and analytical essays.")
+        st.write("### 60-Day Plan")
+        st.write("Expanded topics: Deep-dive into opinion-based and analytical essays .")
         
             
     with col3:
-        st.write("### 60-Day Plan")
+        st.write("### 90-Day Plan")
         st.write("Comprehensive plan covering reports, summaries, and essay writing.")
         
 
     # Sub-navigation for Writing Plans
-    writing_page = st.radio("Select Writing Plan", ["Home", "30-Day Plan", "45-Day Plan", "60-Day Plan"])
+    writing_page = st.radio("Select Writing Plan", ["Home", "15-Day Plan", "60-Day Plan", "90-Day Plan"])
 
     if writing_page == "Home":
         st.write("""Writing is an essential skill. Choose a plan to begin practicing.""")
 
-    elif writing_page == "30-Day Plan":
-        st.write("### 30-Day Writing Plan")
-        topics_30_day = [
-            "The Role of Media in Shaping Public Opinion",
-            "Sustainable Practices for Environmental Conservation",
-            "The Future of Education: Online vs. Traditional Classrooms",
-            "Cultural Impacts of Rapid Technological Advancement",
-            "Challenges and Solutions for Global Healthcare Accessibility",
-            "Social Justice Movements: Impact and Future Prospects",
-            "Globalization: Its Influence on Local Cultures and Economies",
-            "The Rise of Youth Activism: Drivers and Effects",
-            "The Importance of Mental Health in Modern Society",
-            "Climate Change Policies: Are Governments Doing Enough?",
-            "Artificial Intelligence: Balancing Innovation with Ethical Responsibility",
-            "The Future of Work: Remote vs. Office Environments",
-            "Civic Responsibility: The Role of Citizens in a Democracy",
-            "Digital Privacy and Security: Protecting Personal Information Online",
-            "Achieving the Sustainable Development Goals: A Global Effort",
-            "Promoting Gender Equality in the Workplace",
-            "Ensuring Food Security in a Globalized World",
-            "How Technology is Transforming Education: Opportunities and Risks",
-            "Building Stronger Communities: The Role of Local Initiatives",
-            "Art as a Tool for Social Change: Historical and Modern Perspectives",
-            "Crisis Management in the Face of Global Disasters",
-            "Data Privacy in the Age of Information: How Safe Are We?",
-            "The Influence of Social Media on Public Discourse",
-            "Renewable Energy: The Key to a Sustainable Future?",
-            "Public Health Policies: Lessons Learned from Global Pandemics",
-            "The Impact of Consumerism on the Environment and Society",
-            "Urban Development: Solutions for Overcrowded Cities",
-            "The Role of Sports in Building a Healthier Society",
-            "Diversity and Inclusion in the Workplace: Benefits and Challenges",
-            "The Future of Transportation: Innovations and Challenges"
-      ]
-        display_writing_plan(30, topics_30_day)
+    elif writing_page == "15-Day Plan":
+        st.write("### 15-Day Writing Plan")
+        topics_15_day = [
+    "The Power of Media in Shaping Political Narratives",
+    "Innovative Approaches to Sustainable Agriculture",
+    "Virtual Learning vs. In-Person Education: What's the Best Approach?",
+    "How Technology Is Altering Cultural Norms Across the Globe",
+    "Overcoming Healthcare Inequalities in Low-Income Countries",
+    "The Evolution of Global Social Justice Movements",
+    "The Impact of Globalization on National Identity",
+    "The Role of Gen Z in Shaping Modern Activism",
+    "Mental Health in the Digital Age: The Connection Between Social Media and Wellbeing",
+    "Exploring Government Accountability in Combatting Climate Change",
+    "Artificial Intelligence: Enhancing Innovation While Ensuring Ethical Boundaries",
+    "The Future of the Workplace: Hybrid Models and Employee Wellbeing",
+    "Democracy and Civic Engagement: How Can We Empower Citizens?",
+    "Protecting Personal Data in an Era of Surveillance",
+    "Strategies for Achieving Global Sustainability Goals",
+    "Tackling Gender Bias in Corporate Leadership Roles",
+    "Ensuring Global Food Security in the Age of Climate Change",
+    "The Disruption of Education: How Technology Is Changing Learning",
+    "The Role of Local Communities in Promoting Global Sustainability",
+    "Art in Activism: How Creative Expression Influences Social Change",
+    "Effective Crisis Management: Lessons from Natural Disasters and Pandemics",
+    "Data Privacy: Is Digital Security Adequate in Protecting Personal Information?",
+    "Social Media's Role in Shaping Public Opinion in the Digital Age",
+    "The Transition to Renewable Energy: Opportunities and Barriers",
+    "Health Systems After COVID-19: How to Build Resilience for Future Pandemics",
+    "The Influence of Consumerism on Global Environmental Policy",
+    "Addressing the Challenges of Urbanization in Growing Metropolises",
+    "Promoting Public Health through Sports and Physical Activity",
+    "The Business Case for Diversity and Inclusion in Modern Workplaces",
+    "The Future of Mobility: Autonomous Vehicles and Their Impact on Cities"
+]
 
-    elif writing_page == "45-Day Plan":
-        st.write("### 45-Day Writing Plan")
-        topics_45_day = topics =  [
-          "The Role of Media in Shaping Public Opinion",
-          "Sustainable Practices for Environmental Conservation",
-          "The Future of Education: Online vs. Traditional Classrooms",
-          "Cultural Impacts of Rapid Technological Advancement",
-          "Challenges and Solutions for Global Healthcare Accessibility",
-          "Social Justice Movements: Impact and Future Prospects",
-          "Globalization: Its Influence on Local Cultures and Economies",
-          "The Rise of Youth Activism: Drivers and Effects",
-          "The Importance of Mental Health in Modern Society",
-          "Climate Change Policies: Are Governments Doing Enough?",
-          "Artificial Intelligence: Balancing Innovation with Ethical Responsibility",
-          "The Future of Work: Remote vs. Office Environments",
-          "Civic Responsibility: The Role of Citizens in a Democracy",
-          "Digital Privacy and Security: Protecting Personal Information Online",
-          "Achieving the Sustainable Development Goals: A Global Effort",
-          "Promoting Gender Equality in the Workplace",
-          "Ensuring Food Security in a Globalized World",
-          "How Technology is Transforming Education: Opportunities and Risks",
-          "Building Stronger Communities: The Role of Local Initiatives",
-          "Art as a Tool for Social Change: Historical and Modern Perspectives",
-          "Crisis Management in the Face of Global Disasters",
-          "Data Privacy in the Age of Information: How Safe Are We?",
-          "The Influence of Social Media on Public Discourse",
-          "Renewable Energy: The Key to a Sustainable Future?",
-          "Public Health Policies: Lessons Learned from Global Pandemics",
-          "The Impact of Consumerism on the Environment and Society",
-          "Urban Development: Solutions for Overcrowded Cities",
-          "The Role of Sports in Building a Healthier Society",
-          "Diversity and Inclusion in the Workplace: Benefits and Challenges",
-          "The Future of Transportation: Innovations and Challenges",
-          "The Digital Divide: Addressing Inequality in Access to Technology",
-          "Ethical Considerations in Gene Editing Technologies",
-          "The Impact of Automation on Job Markets",
-          "Water Scarcity: A Global Challenge",
-          "Green Architecture: Designing for a Sustainable Future",
-          "Impact of Online Learning on Education Systems",
-          "The Role of Governments in Tackling Income Inequality",
-          "Balancing Economic Growth with Environmental Protection",
-          "Mental Health Support Systems in the Workplace",
-          "The Rise of Freelancing: Impacts on Traditional Employment",
-          "The Role of Public Spaces in Community Well-being",
-          "Addressing Misinformation in the Digital Age",
-          "The Influence of Pop Culture on Social Values",
-          "Cybersecurity Threats in a Globalized World",
-          "The Future of Energy: Exploring Nuclear and Hydrogen Power"
-      ]
-
-
-        display_writing_plan(45, topics_45_day)
+        display_writing_plan(15, topics_15_day)
 
     elif writing_page == "60-Day Plan":
         st.write("### 60-Day Writing Plan")
-        topics_60_day = topics= topics = [
-        "The Role of Media in Shaping Public Opinion",
-        "Sustainable Practices for Environmental Conservation",
-        "The Future of Education: Online vs. Traditional Classrooms",
-        "Cultural Impacts of Rapid Technological Advancement",
-        "Challenges and Solutions for Global Healthcare Accessibility",
-        "Social Justice Movements: Impact and Future Prospects",
-        "Globalization: Its Influence on Local Cultures and Economies",
-        "The Rise of Youth Activism: Drivers and Effects",
-        "The Importance of Mental Health in Modern Society",
-        "Climate Change Policies: Are Governments Doing Enough?",
-        "Artificial Intelligence: Balancing Innovation with Ethical Responsibility",
-        "The Future of Work: Remote vs. Office Environments",
-        "Civic Responsibility: The Role of Citizens in a Democracy",
-        "Digital Privacy and Security: Protecting Personal Information Online",
-        "Achieving the Sustainable Development Goals: A Global Effort",
-        "Promoting Gender Equality in the Workplace",
-        "Ensuring Food Security in a Globalized World",
-        "How Technology is Transforming Education: Opportunities and Risks",
-        "Building Stronger Communities: The Role of Local Initiatives",
-        "Art as a Tool for Social Change: Historical and Modern Perspectives",
-        "Crisis Management in the Face of Global Disasters",
-        "Data Privacy in the Age of Information: How Safe Are We?",
-        "The Influence of Social Media on Public Discourse",
-        "Renewable Energy: The Key to a Sustainable Future?",
-        "Public Health Policies: Lessons Learned from Global Pandemics",
-        "The Impact of Consumerism on the Environment and Society",
-        "Urban Development: Solutions for Overcrowded Cities",
-        "The Role of Sports in Building a Healthier Society",
-        "Diversity and Inclusion in the Workplace: Benefits and Challenges",
-        "The Future of Transportation: Innovations and Challenges",
-        "The Digital Divide: Addressing Inequality in Access to Technology",
-        "Ethical Considerations in Gene Editing Technologies",
-        "The Impact of Automation on Job Markets",
-        "Water Scarcity: A Global Challenge",
-        "Green Architecture: Designing for a Sustainable Future",
-        "Impact of Online Learning on Education Systems",
-        "The Role of Governments in Tackling Income Inequality",
-        "Balancing Economic Growth with Environmental Protection",
-        "Mental Health Support Systems in the Workplace",
-        "The Rise of Freelancing: Impacts on Traditional Employment",
-        "The Role of Public Spaces in Community Well-being",
-        "Addressing Misinformation in the Digital Age",
-        "The Influence of Pop Culture on Social Values",
-        "Cybersecurity Threats in a Globalized World",
-        "The Future of Energy: Exploring Nuclear and Hydrogen Power",
-        "Ethical Dilemmas in Business: Profit vs. Social Responsibility",
-        "The Importance of Multilingualism in a Globalized World",
-        "Space Exploration: Benefits and Challenges for Humanity",
-        "The Role of NGOs in Solving Global Crises",
-        "Improving Urban Mobility Through Smart Cities",
-        "Human Rights in the Age of Global Politics",
-        "The Impact of Digital Currencies on Traditional Banking",
-        "The Role of Education in Fostering Innovation",
-        "Mental Health in the Digital Age: Addressing New Challenges",
-        "Women in Leadership: Progress and Remaining Barriers",
-        "Addressing Climate Refugees: Legal and Moral Obligations",
-        "Artificial Intelligence in Healthcare: Opportunities and Risks",
-        "The Impact of Global Tourism on Local Economies"
-    ]  
+        topics_60_day = [
+    "The Power of Media in Shaping Political Narratives",
+    "Innovative Approaches to Sustainable Agriculture",
+    "Virtual Learning vs. In-Person Education: What's the Best Approach?",
+    "How Technology Is Altering Cultural Norms Across the Globe",
+    "Overcoming Healthcare Inequalities in Low-Income Countries",
+    "The Evolution of Global Social Justice Movements",
+    "The Impact of Globalization on National Identity",
+    "The Role of Gen Z in Shaping Modern Activism",
+    "Mental Health in the Digital Age: The Connection Between Social Media and Wellbeing",
+    "Exploring Government Accountability in Combatting Climate Change",
+    "Artificial Intelligence: Enhancing Innovation While Ensuring Ethical Boundaries",
+    "The Future of the Workplace: Hybrid Models and Employee Wellbeing",
+    "Democracy and Civic Engagement: How Can We Empower Citizens?",
+    "Protecting Personal Data in an Era of Surveillance",
+    "Strategies for Achieving Global Sustainability Goals",
+    "Tackling Gender Bias in Corporate Leadership Roles",
+    "Ensuring Global Food Security in the Age of Climate Change",
+    "The Disruption of Education: How Technology Is Changing Learning",
+    "The Role of Local Communities in Promoting Global Sustainability",
+    "Art in Activism: How Creative Expression Influences Social Change",
+    "Effective Crisis Management: Lessons from Natural Disasters and Pandemics",
+    "Data Privacy: Is Digital Security Adequate in Protecting Personal Information?",
+    "Social Media's Role in Shaping Public Opinion in the Digital Age",
+    "The Transition to Renewable Energy: Opportunities and Barriers",
+    "Health Systems After COVID-19: How to Build Resilience for Future Pandemics",
+    "The Influence of Consumerism on Global Environmental Policy",
+    "Addressing the Challenges of Urbanization in Growing Metropolises",
+    "Promoting Public Health through Sports and Physical Activity",
+    "The Business Case for Diversity and Inclusion in Modern Workplaces",
+    "The Future of Mobility: Autonomous Vehicles and Their Impact on Cities",
+    "The Digital Divide: Bridging the Gap in Access to Technology",
+    "Ethical Considerations in Gene Editing and Biotechnology",
+    "The Future of Work: How Automation Will Reshape Job Markets",
+    "Water Scarcity: Innovative Solutions for a Thirsty World",
+    "Sustainable Architecture: Balancing Design with Environmental Responsibility",
+    "The Impact of Remote Learning on Education and Student Wellbeing",
+    "The Role of Government Policy in Addressing Income Inequality",
+    "Balancing Economic Growth and Environmental Sustainability",
+    "Mental Health Initiatives in the Corporate Sector",
+    "The Impact of the Gig Economy on Traditional Employment Structures",
+    "The Importance of Public Spaces for Community Mental Health",
+    "Combating Misinformation in the Age of Social Media",
+    "Pop Culture's Influence on Shaping Social Values and Norms",
+    "Cybersecurity in a Globalized World: Risks and Solutions",
+    "Exploring the Future of Energy: Nuclear and Hydrogen Power Innovations"
+]
+
+
+
         display_writing_plan(60, topics_60_day)
+
+    elif writing_page == "90-Day Plan":
+        st.write("### 90-Day Writing Plan")
+        topics_90_day = [
+    "The Power of Media in Shaping Political Narratives",
+    "Innovative Approaches to Sustainable Agriculture",
+    "Virtual Learning vs. In-Person Education: What's the Best Approach?",
+    "How Technology Is Altering Cultural Norms Across the Globe",
+    "Overcoming Healthcare Inequalities in Low-Income Countries",
+    "The Evolution of Global Social Justice Movements",
+    "The Impact of Globalization on National Identity",
+    "The Role of Gen Z in Shaping Modern Activism",
+    "Mental Health in the Digital Age: The Connection Between Social Media and Wellbeing",
+    "Exploring Government Accountability in Combatting Climate Change",
+    "Artificial Intelligence: Enhancing Innovation While Ensuring Ethical Boundaries",
+    "The Future of the Workplace: Hybrid Models and Employee Wellbeing",
+    "Democracy and Civic Engagement: How Can We Empower Citizens?",
+    "Protecting Personal Data in an Era of Surveillance",
+    "Strategies for Achieving Global Sustainability Goals",
+    "Tackling Gender Bias in Corporate Leadership Roles",
+    "Ensuring Global Food Security in the Age of Climate Change",
+    "The Disruption of Education: How Technology Is Changing Learning",
+    "The Role of Local Communities in Promoting Global Sustainability",
+    "Art in Activism: How Creative Expression Influences Social Change",
+    "Effective Crisis Management: Lessons from Natural Disasters and Pandemics",
+    "Data Privacy: Is Digital Security Adequate in Protecting Personal Information?",
+    "Social Media's Role in Shaping Public Opinion in the Digital Age",
+    "The Transition to Renewable Energy: Opportunities and Barriers",
+    "Health Systems After COVID-19: How to Build Resilience for Future Pandemics",
+    "The Influence of Consumerism on Global Environmental Policy",
+    "Addressing the Challenges of Urbanization in Growing Metropolises",
+    "Promoting Public Health through Sports and Physical Activity",
+    "The Business Case for Diversity and Inclusion in Modern Workplaces",
+    "The Future of Mobility: Autonomous Vehicles and Their Impact on Cities",
+    "The Digital Divide: Bridging the Gap in Access to Technology",
+    "Ethical Considerations in Gene Editing and Biotechnology",
+    "The Future of Work: How Automation Will Reshape Job Markets",
+    "Water Scarcity: Innovative Solutions for a Thirsty World",
+    "Sustainable Architecture: Balancing Design with Environmental Responsibility",
+    "The Impact of Remote Learning on Education and Student Wellbeing",
+    "The Role of Government Policy in Addressing Income Inequality",
+    "Balancing Economic Growth and Environmental Sustainability",
+    "Mental Health Initiatives in the Corporate Sector",
+    "The Impact of the Gig Economy on Traditional Employment Structures",
+    "The Importance of Public Spaces for Community Mental Health",
+    "Combating Misinformation in the Age of Social Media",
+    "Pop Culture's Influence on Shaping Social Values and Norms",
+    "Cybersecurity in a Globalized World: Risks and Solutions",
+    "Exploring the Future of Energy: Nuclear and Hydrogen Power Innovations"
+]
+
+        display_writing_plan(90, topics_90_day)
 
 # Speaking Module
 elif page == "Speaking Module":
     st.header("Speaking Module")
 
     # Speaking options
-    option = st.radio("Choose an option:", ("Speak in Real Time", "Submit Audio for feedback"))
+    option = st.radio("Choose an option:", ("Speak in Real Time", "Submit your Audio for feedback"))
 
     audio_file = None
     audio_bytes = None
@@ -387,4 +373,4 @@ elif page == "Speaking Module":
 
 # Footer
 st.sidebar.markdown("---")
-st.sidebar.write("Developed by BotBuilders.")
+st.sidebar.write("Developed by NitKeLaunde.")

@@ -12,7 +12,7 @@
 
 ## 🛠️ Installation
 
-Follow these steps to set up TeleGuide on your local machine:
+Follow these steps to set up ScoreSmart on your local machine:
 
 1. Clone the repository:
    ```
