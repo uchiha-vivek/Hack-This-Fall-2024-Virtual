@@ -67,7 +67,8 @@ Meet the brilliant minds behind ScoreSmart:
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br /><sub><b>Vivek Sharma</b><br></sub></a><br />
-       
+       <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br /><sub><b>Vivek Sharma</b><br></sub></a><br />
+       <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br /><sub><b>Vivek Sharma</b><br></sub></a><br />
        
 </td>
 </table>
