@@ -64,14 +64,28 @@ Follow these steps to set up ScoreSmart on your local machine:
 Meet the brilliant minds behind ScoreSmart:
 
 <table>
-  <tr>
+  <tr style="display: flex; gap: 20px; justify-content: center;">
     <td align="center">
-      <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br /><sub><b>Vivek Sharma</b><br></sub></a><br />
-       <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br /><sub><b>Vivek Sharma</b><br></sub></a><br />
-       <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br /><sub><b>Vivek Sharma</b><br></sub></a><br />
-       
-</td>
+      <a href="https://www.linkedin.com/in/vivekuchiha/">
+        <img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br />
+        <sub><b>Vivek Sharma</b><br></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/vivekuchiha/">
+        <img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br />
+        <sub><b>Vivek Sharma</b><br></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/vivekuchiha/">
+        <img src="images/Vivek.jpeg" width="120px;" alt="Asim Khan"/><br />
+        <sub><b>Vivek Sharma</b><br></sub>
+      </a>
+    </td>
+  </tr>
 </table>
+
 
 
  
