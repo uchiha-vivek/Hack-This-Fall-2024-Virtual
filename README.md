@@ -67,7 +67,7 @@ Meet the brilliant minds behind ScoreSmart:
   <tr style="display: flex; gap: 30px; justify-content: center;">
     <td align="center">
       <a href="https://www.linkedin.com/in/vivekuchiha/">
-        <img src="images/Vivek.jpeg" width="120px;" alt="Vivek Sharma"/><br />
+        <img src="images/Vivek.jpeg" width="160px;" alt="Vivek Sharma"/><br />
         <sub><b>Vivek Sharma</b><br></sub>
       </a>
     </td>
