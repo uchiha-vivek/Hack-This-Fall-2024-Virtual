@@ -60,7 +60,7 @@ Follow these steps to set up TeleGuide on your local machine:
 
 ## 👥 Team
 
-Meet the brilliant minds behind TeleGuide:
+Meet the brilliant minds behind BlightSight:
 
 
  
