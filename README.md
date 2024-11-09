@@ -64,7 +64,7 @@ Follow these steps to set up ScoreSmart on your local machine:
 Meet the brilliant minds behind ScoreSmart:
 
 <table>
-  <tr style="display: flex; gap: 30px; justify-content: center;">
+  <tr style="display: flex; gap: 50px; justify-content: center;">
     <td align="center">
       <a href="https://www.linkedin.com/in/vivekuchiha/">
         <img src="images/Vivek.jpeg" width="180px;" alt="Vivek Sharma"/><br />
