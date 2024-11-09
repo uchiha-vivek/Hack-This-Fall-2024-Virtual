@@ -8,8 +8,9 @@
 "ScoreSmart" is an AI-powered app designed to help users excel in the IELTS exam by targeting core skills: reading, writing, speaking, and listening. It uses cutting-edge machine learning to create a personalized, adaptive learning experience that focuses on each user’s unique strengths and weaknesses. 
 
 ## 🚀 Features
-
-
+1: Writing Module : Enables you to select the topic and then write some content based on the topic .
+  Metrics : It gives you insight on basis of Grammar,Cohesion,Sentence Structure,Vocabulary,Abstraction,Improved version,Level
+2: speaking Module : Gives you insights from the audio input .
 ## 🛠️ Installation
 
 Follow these steps to set up ScoreSmart on your local machine:
@@ -61,6 +62,34 @@ Follow these steps to set up ScoreSmart on your local machine:
 ## 👥 Team
 
 Meet the brilliant minds behind ScoreSmart:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/asim-khan-baloch/"><img src="https://github.com/Asimbaloch.png" width="120px;" alt="Asim Khan"/><br /><sub><b>Asim Khan</b><br></sub></a><br />
+      <a href="https://www.linkedin.com/in/asim-khan-baloch/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" width="100px"/></a>
+      <a href="https://github.com/Asimbaloch"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" width="100px"/></a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/ahmad-fakhar-357742258/"><img src="https://github.com/Ahmad-Fakhar.png" width="120px;" alt="Ahmad Fakhar"/><br /><sub><b>Ahmad Fakhar</b><br></sub></a><br />
+      <a href="https://www.linkedin.com/in/ahmad-fakhar-357742258/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" width="100px"/></a>
+      <a href="https://github.com/Ahmad-Fakhar"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" width="100px"/></a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/muhammad-jawad-86507b201"><img src="https://github.com/mj-awad17.png" width="120px;" alt="Muhammad Jawad"/><br /><sub><b>Muhammad Jawad</b><br></sub></a><br />
+      <a href="https://www.linkedin.com/in/muhammad-jawad-86507b201"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" width="100px"/></a>
+      <a href="https://github.com/mj-awad17"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" width="100px"/></a>
+    </td>
+    <td align="center">
+      <a href="http://www.linkedin.com/in/tayyab-sajjad-156ab2267"><img src="https://avatars.githubusercontent.com/u/124726671?v=4" width="120px;" alt="Tayyab Sajjiad"/><br /><sub><b>Tayyab Sajjiad</b><br></sub></a><br />
+      <a href="http://www.linkedin.com/in/tayyab-sajjad-156ab2267"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" width="100px"/></a>
+      <a href="https://github.com/devtayyabsajjad"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" width="100px"/></a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/vivekuchiha/"><img src="images/Vivek.jpeg" width="120px;" alt="Vivek Sharma"/><sub><br><b>Vivek Sharma</b><br></sub></a><br />
+       
+</td>
+</table>
 
 
  

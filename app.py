@@ -146,7 +146,7 @@ if page == "Home":
 elif page == "Writing Module":
     st.header("Writing Module")
     st.write(""" 
-     SmartScore is expertly crafted to help you enhance your English communication and grammar skills. Select from a range of Writing Plans (30, 45, or 60 days) and engage in writing exercises across a variety of diverse topics. Receive real-time, personalized feedback to guide your progress. Consistency is key to mastering writing, and with SmartScore, you can choose a plan tailored to your needs and pace, ensuring steady improvement in both proficiency and confidence.
+     SmartScore is expertly crafted to help you enhance your English communication and grammar skills. Select from a range of Writing Plans (15, 60, or 90 days) and engage in writing exercises across a variety of diverse topics. Receive real-time, personalized feedback to guide your progress. Consistency is key to mastering writing, and with SmartScore, you can choose a plan tailored to your needs and pace, ensuring steady improvement in both proficiency and confidence.
     """)
     
     # Key Feature Rectangles
@@ -373,4 +373,4 @@ elif page == "Speaking Module":
 
 # Footer
 st.sidebar.markdown("---")
-st.sidebar.write("Developed by NitKeLaunde.")
+st.sidebar.write("Created by ScoreSmart.")
