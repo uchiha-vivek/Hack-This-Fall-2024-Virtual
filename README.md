@@ -10,7 +10,10 @@
 ## 🚀 Features
 1: Writing Module : Enables you to select the topic and then write some content based on the topic .
   Metrics : It gives you insight on basis of Grammar,Cohesion,Sentence Structure,Vocabulary,Abstraction,Improved version,Level
+
+
 2: speaking Module : Gives you insights from the audio input .
+
 ## 🛠️ Installation
 
 Follow these steps to set up ScoreSmart on your local machine:
@@ -22,7 +25,7 @@ Follow these steps to set up ScoreSmart on your local machine:
 
 2. Navigate to the project directory:
    ```
-   
+    cd Hack-This-Fall-2024-Virtual
    ```
 
 3. Create a virtual environment:
@@ -49,7 +52,7 @@ Follow these steps to set up ScoreSmart on your local machine:
    - Create a `.streamlit/secrets.toml` file in the project root
    - Add your API key:
      ```
-     api_key = "your-api-key-here"
+     api_key = "your-groq-api-key-here"
      ```
 
 7. Run the Streamlit app:
