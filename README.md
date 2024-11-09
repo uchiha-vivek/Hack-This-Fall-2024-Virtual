@@ -102,7 +102,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 - [Streamlit](https://streamlit.io/) for the amazing web app framework
-- [OpenAI](https://openai.com/) for the powerful language models
+- [Groq](https://console.groq.com/keys) for the powerful language models
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="rainbow line" />
