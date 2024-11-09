@@ -67,19 +67,19 @@ Meet the brilliant minds behind ScoreSmart:
   <tr style="display: flex; gap: 30px; justify-content: center;">
     <td align="center">
       <a href="https://www.linkedin.com/in/vivekuchiha/">
-        <img src="images/Vivek.jpeg" width="160px;" alt="Vivek Sharma"/><br />
+        <img src="images/Vivek.jpeg" width="180px;" alt="Vivek Sharma"/><br />
         <sub><b>Vivek Sharma</b><br></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/parahsar-rohit/">
-        <img src="images/Rohit.jpeg" width="120px;" alt="Rohit Parashar"/><br />
+        <img src="images/Rohit.jpeg" width="180px;" alt="Rohit Parashar"/><br />
         <sub><b>Rohit Parashar</b><br></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://www.linkedin.com/in/neha-prasad-92499821b/">
-        <img src="images/Neha.jpeg" width="120px;" alt="Neha Prasad"/><br />
+        <img src="images/Neha.jpeg" width="180px;" alt="Neha Prasad"/><br />
         <sub><b>Neha Prasad</b><br></sub>
       </a>
     </td>
