@@ -1,0 +1,7 @@
+streamlit
+bcrypt
+python-dotenv
+pyspellchecker
+groq
+gtts
+audio-recorder-streamlit

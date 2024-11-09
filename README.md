@@ -1,11 +1,11 @@
 
-# 🛰️ BlightSight: AI-Powered Plant Disease Detection App for Farmers .
+# 🛰️ ScoreSmart :  An AI Powered Application designed to help students to improve their English Communication skills . .
  
 ![BlightSight](https://github.com/uchiha-vivek/Hack-This-Fall-2024-Virtual)
 
  
 
-Detect and diagnose plant diseases with ease using BlightSight . This powerful app leverages AI to analyze photos of plants, identifying diseases and providing actionable care tips. Just snap a photo, and BlightSight will quickly diagnose issues, whether it’s blight, mildew, rust, or other common plant diseases. Ideal for farmers, gardeners, and plant enthusiasts, BlightSight empowers users to protect their crops and gardens, improve yields, and maintain plant health—all from their smartphone.
+"ScoreSmart" is an AI-powered app designed to help users excel in the IELTS exam by targeting core skills: reading, writing, speaking, and listening. It uses cutting-edge machine learning to create a personalized, adaptive learning experience that focuses on each user’s unique strengths and weaknesses. 
 
 ## 🚀 Features
 
@@ -56,11 +56,11 @@ Follow these steps to set up TeleGuide on your local machine:
    streamlit run app.py
    ```
 
-8. Open your web browser and go to `http://localhost:8501` to use BlightSight!
+8. Open your web browser and go to `http://localhost:8501` to use ScoreSmart!
 
 ## 👥 Team
 
-Meet the brilliant minds behind BlightSight:
+Meet the brilliant minds behind ScoreSmart:
 
 
  
@@ -68,7 +68,7 @@ Meet the brilliant minds behind BlightSight:
 <!--
 ## 🤝 Contributing
 
-We welcome contributions to BlightSight ! Please check out our [Contributing Guide](CONTRIBUTING.md) for guidelines on how to proceed.
+We welcome contributions to ScoreSmart ! Please check out our [Contributing Guide](CONTRIBUTING.md) for guidelines on how to proceed.
 
 ## 📄 License
 
@@ -84,5 +84,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 </p>
 
 <p align="center">
-  Made with ❤️ by the BlightSight Team
+  Made with ❤️ by the ScoreSmart Team
 </p>
